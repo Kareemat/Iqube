@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Basic Arithmetic Calculator</title>
+	<style type="text/css">
+		body{
+			background-color: brown;
+			text-align: center;
+			margin: 20px;
+		}
+	</style>
+	<script type="text/javascript">
+		function calc(){
+			var num1 = parseFloat(document.getElementById("FirstNo").value)
+			var num2 = parseFloat(document.getElementById("SecondNo").value)
+			var opp = document.getElementById("operator").value
+		if (opp === "+") {
+			document.getElementById("result").value = num1+num2
+		}	
+		else if (opp === "-") {
+			document.getElementById("result").value = num1-num2
+		}
+		else if (opp === "*") {
+			document.getElementById("result").value = num1*num2
+		}	
+		else if (opp === "/") {
+			document.getElementById("result").value = num1/num2
+		}	
+		}
+	</script>
+</head>
+<body>
+ <h1>CALCULATOR</h1>
+First number : <input type="text" id="FirstNo" placeholder="Enter a number"><br><br>
+<select id="operator">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+</select><br><br>
+Second number : <input type="text" id="SecondNo" placeholder="Enter a number">
+ <br><br>
+<input type = "Button" value= "=" onclick="calc();">
+<br><br>
+Answer: <input type="text" id="result" placeholder="result"><br>
+</body>
+</html>
