@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<style type="text/css">
+		 *{
+		 	margin: 0;
+		 	padding: 0;
+		 	font-size: 18px;
+		 }
+		.button{
+			height: 50px;
+			width: 50px;
+			background-color: coral;	
+		}
+		#input{
+			width:196px;
+			height:30px;
+			text-align: right;
+
+		}
+		#in{
+			width:196px;
+			height:30px;
+			text-align: right;
+		}
+		.container{
+			 position: absolute;
+			 top: 10%;
+			 left: 40%;
+		}
+		#equals{
+			width: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+		function show(button){
+			myForm.input.value += button
+		}
+		function result(){
+			myForm.in.value = eval(myForm.input.value)
+		}
+		function percent(){
+              myForm.input.value = eval(myForm.input.value/100)
+		}
+		function empty(){
+			myForm.input.value =""
+			myForm.in.value =""
+		}
+		function del(){
+           myForm.input.value= myForm.input.value.substr(0,myForm.input.value.length-1)
+           if(myForm.input.value == ""){
+			myForm.in.value = ""
+		}
+		}
+	</script>
+</head>
+<body bgcolor="#607d8b">
+<div class="container">
+	 <form name="myForm">
+	 	<table cellspacing="0">
+ 		<tr><td><input type="text" id="input" value='' placeholder="Enter your value here"></td></tr>
+ 		<tr><td><input type="text" id="in" value='' placeholder="Answer"></td></tr>
+ 		</table>
+     </form>
+ 	<table cellspacing="0" >
+ 		<tr>
+ 			<td><button type="button" class="button" value="AC" onclick="empty()">AC</button></td>
+ 			<td><button type="button" class="button"  value="." onclick="show('.')">.</button></td>
+ 			<td><button type="button" class="button" value="%" onclick="percent()">%</button></td>
+ 			<td><button type="button" class="button" value="/" onclick="show('/')">/</button></td>
+ 		</tr>	
+ 		<tr>
+ 			<td><button type="button"  class="button" value="7" onclick="show(7)">7</button></td>
+ 			<td><button type="button" class="button"  value="8" onclick="show(8)">8</button></td>
+ 			<td><button type="button" class="button"  value="9" onclick="show(9)">9</button></td>
+ 			<td><button type="button" class="button"  value="*" onclick="show('*')">x</button></td>
+ 		</tr>
+ 		<tr>
+ 			<td><button type="button" class="button"  value="4" onclick="show(4)">4</button></td>
+ 			<td><button type="button" class="button"  value="5" onclick="show(5)">5</button></td>
+ 			<td><button type="button" class="button"  value="6" onclick="show(6)">6</button></td>
+ 			<td><button type="button" class="button"  value="-" onclick="show('-')">-</button></td>
+ 		</tr>
+ 		<tr>
+ 			<td><button type="button" class="button"  value="1" onclick="show(1)">1</button></td>
+ 			<td><button type="button" class="button"  value="2" onclick="show(2)">2</button></td>
+ 			<td><button type="button" class="button"  value="3" onclick="show(3)">3</button></td>
+ 			<td><button type="button" class="button"  value="+" onclick="show('+')">+</button></td>
+ 		</tr>
+ 		<tr>
+ 			<td><button type="button" class="button"  value="0" onclick="show(0)">0</button></td>
+ 			<td><button type="button" class="button"  value="del" onclick="del()">del</button></td>
+ 			<td colspan="2"><button type="button"  id="equals" class="button"  value="=" onclick="result()">=</button></td>
+ 		</tr>
+ 	</table>	
+</div>
+</body>
+</html>
