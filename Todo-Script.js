@@ -26,7 +26,7 @@
     const inputValue = document.getElementById("item").value;
     const DateDetail = document.getElementById("date").value;
     const TimeDetail = document.getElementById("Time").value;
-    let inputDateTime = document.createTextNode(inputValue   +"     " + DateDetail +"  " + TimeDetail);
+    let listValue = document.createTextNode(inputValue   +"     " + DateDetail +"  " + TimeDetail);
     let details ={
       input:inputValue ,
       date:DateDetail,
@@ -45,7 +45,7 @@
         localStorage.setItem('todos', JSON.stringify(extractArray))
      }
 
-    li.appendChild(inputDateTime);
+    li.appendChild(listValue);
     if (inputValue === '') {
       alert("You must write something!");
     } 
