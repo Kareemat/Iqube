@@ -1,29 +1,62 @@
-	 function newElement() {
+  $(document).ready(function() {
+      let listArray = JSON.parse(localStorage.getItem('todos')) 
+      for(i =0; i <listArray.length; i++){
+          let list=document.createElement("li"); 
+           let valuez =listArray[i]
+           let valuezValue =document.createTextNode(valuez.input +" "+ valuez.date +" "+ valuez.time)
+           list.appendChild(valuezValue);
+           let span = document.createElement("SPAN");
+           let txt = document.createTextNode("\u00D7")
+           span.className = "close";
+           let editor = document.createElement("SPAN");
+           let edit = document.createTextNode("\u270E");
+           editor.className = "editt";
+           editor.appendChild(edit);
+           span.appendChild(txt);
+           list.appendChild(editor)
+           list.appendChild(span);
+           document.getElementById("myUL").appendChild(list)
+      };
+  })
+
+
+   function newElement(){
     let li = document.createElement("li");
     li.className = "liClass";
     const inputValue = document.getElementById("item").value;
     const DateDetail = document.getElementById("date").value;
     const TimeDetail = document.getElementById("Time").value;
-    let d =document.createTextNode(DateDetail);
     let t = document.createTextNode(inputValue   +"     " + DateDetail +"  " + TimeDetail);
     let details ={
       input:inputValue ,
       date:DateDetail,
       time:TimeDetail
     };
-    localStorage.setItem('todo', JSON.stringify(details))
+    //to put the values in local Storage
+    if(window.localStorage.length ===0){
+        let inputArray =[];
+        inputArray.push(details);
+        localStorage.setItem('todos', JSON.stringify(inputArray))
+
+     }
+     else{
+         let extractArray =JSON.parse(localStorage.getItem('todos'))
+        extractArray.push(details);
+        localStorage.setItem('todos', JSON.stringify(extractArray))
+     }
+
     li.appendChild(t);
     if (inputValue === '') {
       alert("You must write something!");
-    } else {
-      document.getElementById("myUL").appendChild(li)
-      console.log(details)
-     }
+    } 
+    else {
+    document.getElementById("myUL").appendChild(li)
     document.getElementById("item").value = "";
     document.getElementById("date").value = "";
-
+    }
+    
     let span = document.createElement("SPAN");
-    let txt = document.createTextNode("\u00D7");
+    let txt = document.createTextNode("\u00D7")
     span.className = "close";
     let editor = document.createElement("SPAN");
     let edit = document.createTextNode("\u270E");
@@ -41,7 +74,12 @@
         Task.style.display = "none";
       }
     }
-
+     let list = document.querySelector('ul');
+     let editList = document.querySelector('.editt');
+      editList.onclick = function() {
+        //let list = $(this).closest("li")
+        list.contentEditable = true;
+      }
     function appendLeadingZeroes(n){
       if(n <= 9){
         return "0" + n;
@@ -56,7 +94,7 @@
     let taskList = document.getElementsByTagName("li");
     for (i = 0; i < taskList.length; i++) {
       if(fullDate > now){
-
+        taskList[i].style.setProperty("text-decoration", "none")
       }
       else{
        taskList[i].style.setProperty("text-decoration", "line-through")
