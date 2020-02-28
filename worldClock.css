@@ -1,0 +1,81 @@
+body {
+  background-image:linear-gradient(rgba(36,70,105,.74), rgba(36,70,105,.74)), url("C:/Users/Fasasi/Downloads/Snowmountain.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+}
+ #outerLagos,
+ #outerLondon,
+ #outerTexas,
+ #outerParis{
+   left:40%;
+   background: grey;
+   border-radius: 50%;
+   height: 200px;
+   width: 200px;
+   position: relative;
+   border: 10px solid rgba(36,70,105,.74);
+ }
+ #innerLagos,
+ #innerLondon,
+ #innerTexas,
+ #innerParis{
+   position: absolute;
+   background: grey;
+   border-radius: 50%;
+   height: 100px;
+   width: 100px;
+   top: 50%;
+   left: 50%;
+   border:1px solid white;
+   margin: -50px 0px 0px -50px;
+   text-align: center;
+ }
+ .twelve,
+.three,
+.nine
+{
+    background: white;
+    position: absolute;
+}
+.six{
+	background: black;
+    position: absolute;
+}
+.twelve{
+    height: 10px;
+    width: 4px;
+}
+.six{
+    height: 15px;
+    width: 4px;
+}
+.three,
+.nine
+{
+    height: 4px;
+    width: 10px;
+}
+
+.twelve
+{
+    left: 50%;
+    top: -5px;
+}
+
+.three
+{
+    right: -5px;
+    top: 50%;
+}
+
+.six
+{
+    left: 50%;
+    bottom:-12px;
+}
+
+.nine
+{
+    left: -5px;
+    top: 50%;
+}
