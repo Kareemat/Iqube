@@ -1,0 +1,116 @@
+#container{
+  padding: 3% 7%;
+
+}
+#top{
+  width: 100%;
+  display: flex;
+}
+#logo{
+  width: 70%;
+}
+#countdown{
+  width: 30%;
+}
+#logo p{
+  color: #C0C0C0;
+}
+#mid{
+  width: 40%;
+  padding-top: 8%;
+}
+#mid p{
+  color: #C0C0C0;
+  font-style: bold;
+
+}
+#mid h1{
+  font-style: bold;
+  font-size: 50px;
+}
+#signup{
+  display: flex;
+  width: 40%;
+}
+#input-email{
+  position: relative;
+  width: 90%;
+  height: 40px;
+}
+#email{
+  width: 50%;
+  height: 40px;
+  padding-left:40px;
+  outline: none;
+  border-radius: 4px;
+  border: 1px solid #aaa;
+  color: black;
+}
+#input-email i {
+  position: absolute;
+  left:5px;
+  top: 4px;
+  padding: 9px 8px;
+  color: #aaa;
+  transition: 0.3s;
+  color: black;
+}
+.button{
+  background-color: #0073CF;
+  border: none;
+  color: white;
+  padding: 10px;
+  border-radius:15px;
+  text-align: center;
+  width: 20%;
+  height: 50px;
+  font-size: 15px;
+  cursor: pointer;  
+}
+#footer{
+	padding-top: 15%;
+	font-size: 30px;
+	margin-right: 5%;
+}
+#footer i{
+	font-size: 30px;
+	margin-right: 2%;
+}
+.clock-row{
+	display: flex;
+}
+.clock-item{
+  padding-right: 50px;
+  margin-right: 50px;
+}
+.clock-item .inner {
+height: 0px;
+padding-bottom: 100%;
+position: relative;
+width: 100%;
+}
+.clock-canvas {
+background-color: rgba(255, 255, 255, .1);
+border-radius: 50%;
+height: 0px;
+padding-bottom: 100%;
+}
+.text {
+color: black;
+font-weight: bold;
+margin-top: -50px;
+position: absolute;
+top: 50%;
+text-align: center;
+text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+width: 100%;
+}
+.text .val {
+font-size: 25px;
+text-align: center;
+}
+.text .type-time {
+font-size: 15px;
+color: #C0C0C0;
+text-align: center;
+}
